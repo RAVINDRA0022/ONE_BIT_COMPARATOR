@@ -1,0 +1,20 @@
+`timescale 1ns / 1ps
+
+module one_bit_comparator_tb();
+reg a;
+reg b;
+wire A;
+wire B;
+wire C;
+one_bit_comparator uut (.a(a), .b(b),  .A(A), .B(B), .C(C));
+  
+  initial 
+  begin 
+    #5; a = 0 ; b = 0 ;
+    #5; a = 1 ; b = 0 ;
+    #5; a = 0 ; b = 1 ;
+    #5; a = 1 ; b = 1 ;
+     #5; $stop;
+     end
+  
+endmodule
